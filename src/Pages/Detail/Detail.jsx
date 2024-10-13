@@ -87,7 +87,7 @@ const Detail = () => {
               <div className="font-normal text-[#171A1F] overflow-x-auto">
                 <img src={image} alt="Country" className="w-96 h-96 mx-auto" />
 
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-1 md:grid-cols-3">
                 {images.map((item, key) =>
                   <div key={key} className="mb-4 md:mb-0 cursor-pointer">
                     <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
