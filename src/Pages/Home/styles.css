@@ -1,0 +1,46 @@
+/* styles.css */
+.custom-paging {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .custom-paging .paging-link {
+    background-color: #00157C;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-paging .paging-link:hover {
+    background-color: #00A896;
+  }
+  
+  .custom-paging .active {
+    background-color: #00A896;
+    font-weight: bold;
+  }
+
+.sui-search-box__text-input {
+  position: relative;
+}
+
+.sui-search-box__autocomplete-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.sui-search-box__autocomplete-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.sui-search-box__autocomplete-item:hover {
+  background-color: #f0f0f0;
+}

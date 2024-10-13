@@ -1,7 +1,34 @@
 import { Link } from "react-router-dom";
 import Button from "../../Components/Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    
+    const username = e.target.username.value;
+    const password = e.target.password.value;
+  
+    const response = await fetch('http://127.0.0.1:8000/api/token/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+  
+    if (response.ok) {
+      const data = await response.json();
+      localStorage.setItem('access_token', data.access);
+      localStorage.setItem('refresh_token', data.refresh);
+      console.log(data)
+      navigate('/');
+    } else {
+       setError(err.response ? err.response.data.detail : "Login failed try later");
+    }
+  };
+  
   return (
     <div className="login">
       <div className="bg-gray-50 font-[sans-serif]">
@@ -19,7 +46,7 @@ const Login = () => {
               <h2 className="text-gray-800 text-center text-2xl font-bold">
                 Sign In
               </h2>
-              <form className="mt-8 space-y-4">
+              <form className="mt-8 space-y-4" onSubmit={handleLogin}>
                 <div>
                   <label className="text-gray-800 text-sm mb-2 block">
                     User name

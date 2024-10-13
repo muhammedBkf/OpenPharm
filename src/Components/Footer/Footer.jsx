@@ -5,39 +5,36 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
-    <div className="footer bg-[#F3F4F6] py-8 px-16">
+    <div className="footer bg-[#d2d9ff] py-8 px-16">
       <div className="container mx-auto flex">
         <div className="left flex-1 flex flex-col justify-between">
-          <h3 className="text-3xl font-bold tracking-wider">
-            Leave us a <br />
-            note !
+          <h3 className="text-3xl font-bold text-[#00157c] tracking-wider">
+          Laissez-nous un <br />
+          mot ! 
+            
           </h3>
           <div className="box">
-            <div className="socialmedia flex items-center gap-5 mb-2">
-              <FontAwesomeIcon icon={faInstagram} className="text-2xl" />
-              <FontAwesomeIcon icon={faLinkedinIn} className="text-2xl" />
-              <FontAwesomeIcon icon={faEnvelope} className="text-2xl" />
-            </div>
-            <div className="copyright text-[#171A1F]">
-              <p>© 2022 Brand, Inc. • Privacy • Terms • Sitemap</p>
+            
+            <div className="copyright text-[#00157c] ">
+              <p>© 2024 </p>
             </div>
           </div>
         </div>
         <div className="right flex-1">
           <form action="">
-            <label htmlFor="">Email</label>
+            <label htmlFor="" className="text-[#00157c] ">Email</label>
             <input
               type="text"
-              className="border-[#BCC1CA] bg-[#F8F9FA] border w-full px-3 py-2 mb-5 focus:border-[#565E6D] outline-none"
-              placeholder="Your Email Address "
+              className="border-[#BCC1CA] bg-[#F8F9FA] border rounded-md w-full px-3 py-2 mb-2 focus:border-[#565E6D] outline-none"
+              placeholder="Votre adresse email "
             />
-            <label htmlFor="">Email</label>
-            <input
+            <label htmlFor="" className="text-[#00157c] ">Message</label>
+            <textarea
               type="text"
-              className="border-[#BCC1CA] bg-[#F8F9FA] border w-full px-3 py-2 mb-6 focus:border-[#565E6D] outline-none"
-              placeholder="Input your message"
-            />
-            <Button text="submit" clicked />
+              className="resize-none border-[#BCC1CA] bg-[#F8F9FA] border rounded-md w-full px-3 py-5 mb-6 focus:border-[#565E6D] outline-none"
+              placeholder="Veuillez saisir votre message ici "
+            ></textarea>
+            <Button text="envoyer"  className="bg-transparent text-[#00157c]  border border-1 text-[#00157c]  rounded-2xl hover:bg-[#f0f0f0] hover:text-[#00157C]"/>
           </form>
         </div>
       </div>
