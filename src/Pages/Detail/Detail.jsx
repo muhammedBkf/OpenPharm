@@ -9,7 +9,7 @@ import imagesIcon from './images.svg';
 
 const Detail = () => {
   const { id } = useParams();
-  const [medicament, setMedicament] = useState("Aymen");
+  const [medicament, setMedicament] = useState(null);
   const [images, setImages] = useState(
     ["https://www.pharma-gdd.com/cache/product_show/333430303933353935353833382d646f6c697072616e652d313030306d672d382d636f6d7072696d657313e8670f.jpg.webp",
       "https://www.pharma-gdd.com/cache/product_show/73616e6f66692d646f6c697072616e652d313030306d672d382d636f6d6f7072696d65732d646f7354c5da4e.jpg.webp",
@@ -20,21 +20,49 @@ const Detail = () => {
   const [contShow, setContShow] = useState(0);
 
   useEffect(() => {
-    const fetchMedicament = async () => {
-      try {
-        const response = await axios.get(`https://localhost:9200/medicine-index-w-autocomplete/_doc/${id}`, {
-          headers: {
-            'Authorization': 'Basic ZWxhc3RpYzpuX1d5Z3JXVnVqUU1pZTY1emdIdw==',
-            'Content-Type': 'application/json'
-          }
-        });
-        setMedicament(response.data._source);
-      } catch (error) {
-        console.error('Error fetching medicament details:', error);
-      }
-    };
+    // const fetchMedicament = async () => {
+    //   try {
+    //     const response = await axios.get(`/pharma/medicine-index-w-autocomplete/_doc/${id}`, {
+    //       headers: {
+    //         'Authorization': 'Basic ZWxhc3RpYzpuX1d5Z3JXVnVqUU1pZTY1emdIdw==',
+    //         'Content-Type': 'application/json'
+    //       }
+    //     });
+    //     setMedicament(response.data._source);
+    //   } catch (error) {
+    //     console.error('Error fetching medicament details:', error);
+    //   }
+    // };
 
-    fetchMedicament();
+    // fetchMedicament();
+
+
+const fetchData = async () => {
+  try {
+    const response = await axios.post(
+      '/pharma/_search',
+      {
+        query: {
+          match: {
+            "_id": id
+          }
+        }
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic ZWxhc3RpYzpuX1d5Z3JXVnVqUU1pZTY1emdIdw==',
+        }
+      }
+    );
+    setMedicament(response.data.hits.hits[0]._source);
+    console.log('Data:', response.data.hits.hits[0]._source);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+fetchData();
+
   }, [id]);
 
   if (!medicament) return <p>Loading...</p>;
@@ -64,13 +92,13 @@ const Detail = () => {
               <img src={labIcon} alt="Laboratory" className="w-5 h-5" />
               {medicament['labo']}
             </li>
-            <li onClick={() => setContShow(1)} className="cursor-pointer bg-[#d2d9ff] py-3 px-4 flex items-center rounded-md shadow ">
-              <img src={imagesIcon} alt="Country" className="w-5 h-5" />
-              {medicament['Pays']}
-            </li>
             <li className="cursor-pointer bg-[#d2d9ff] py-3 px-4 flex items-center rounded-md shadow ">
               <img src={mapIcon} alt="Country" className="w-5 h-5" />
               {medicament['Pays']}
+            </li>
+            <li onClick={() => setContShow(1)} className="cursor-pointer bg-[#d2d9ff] py-3 px-4 flex items-center rounded-md shadow ">
+              <img src={imagesIcon} alt="Images" className="w-5 h-5 mr-1" />
+              Images
             </li>
 
           </ul>

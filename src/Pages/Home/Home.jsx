@@ -13,8 +13,10 @@ import './styles.css';
 
 
 const connector = new ElasticsearchAPIConnector({
-  host: "https://localhost:9200",
-  index: "medicine-index-w-autocomplete",
+  // host: "https://localhost:9200",
+  // index: "medicine-index-w-autoco mplete",
+  host: "/pharma",
+  index: "pharma",
   connectionOptions: {
     headers: {
       Authorization: 'Basic ZWxhc3RpYzpuX1d5Z3JXVnVqUU1pZTY1emdIdw==',
