@@ -12,18 +12,16 @@ import CustomResult from './CustomResultsView';
 import './styles.css';
 
 
-
 const connector = new ElasticsearchAPIConnector({
-  // host: "https://localhost:9200",
-  // index: "medicine-index-w-autoco mplete",
-  host: "/pharma",
+  host: process.env.VITE_ELASTICSEARCH_HOST || "/pharma",
   index: "pharma",
   connectionOptions: {
     headers: {
-      Authorization: 'Basic ZWxhc3RpYzpuX1d5Z3JXVnVqUU1pZTY1emdIdw==',
+      Authorization: `Basic ${process.env.VITE_ELASTICSEARCH_AUTH}`,
     },
-  }
+  },
 });
+
 
 
 
