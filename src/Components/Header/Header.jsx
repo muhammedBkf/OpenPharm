@@ -8,7 +8,7 @@ const Header = () => {
             <div className="container mx-auto flex justify-between items-center gap-20">
                 <div className="logo">
                     <Link to="/">
-                    <h1 className="text-2xl font-bold text-white" style={{ fontFamily: 'Poppins, sans-serif' }} >Logo</h1>
+                    <h1 className="text-2xl font-bold text-white" style={{ fontFamily: 'Poppins, sans-serif' }} >OpenPharm</h1>
                     </Link>
                 </div>
                 <NavBar />
