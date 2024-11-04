@@ -12,15 +12,18 @@ import CustomResult from './CustomResultsView';
 import './styles.css';
 
 
+
 const connector = new ElasticsearchAPIConnector({
-  host: process.env.VITE_ELASTICSEARCH_HOST || "/pharma",
+  // index: "medicine-index-w-autoco mplete",
+  host: "http://213.199.63.26:9200",
   index: "pharma",
   connectionOptions: {
     headers: {
-      Authorization: `Basic ${process.env.VITE_ELASTICSEARCH_AUTH}`,
+      Authorization: 'Basic ZWxhc3RpYzpuX1d5Z3JXVnVqUU1pZTY1emdIdw==',
     },
-  },
+  }
 });
+
 
 
 
