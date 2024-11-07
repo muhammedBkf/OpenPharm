@@ -134,7 +134,7 @@ const Home = () => (
 
 
           <div className="w-full grid grid-auto-columns grid-cols-12  mt-5.5 pl-10">
-            <div className=" col-span-2  mr-10">
+            <div className=" col-span-2 max-lg:col-span-12 mr-10">
 
               <Facet key={"2"} field={"Pays"} showSearch={true} searchPlaceholder="rechercher pays..." label={<span style={{ color: '#00A896', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >Pays</span>} />
               <Facet key={"3"} field={"labo.keyword"} searchPlaceholder="rechercher labo ..." isFilterable={true} label={<span style={{ color: '#00A896', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >Laboratoire</span>} />
@@ -145,7 +145,7 @@ const Home = () => (
             </div>
 
 
-            <div className="col-span-8">
+            <div className="col-span-8 max-lg:col-span-12">
 
               <h3 className="relative text-3xl font-bold text-[#4a4a4a] inline-block mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>
 

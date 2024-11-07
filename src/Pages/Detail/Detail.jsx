@@ -137,7 +137,7 @@ fetchData();
 
 
 
-          <div className={`cont3 moredetails text-left w-3/5 mx-auto pt-5 pb-8 ${contShow == 0 ? "" : "hidden"}`}>
+          <div className={`cont3 moredetails text-left w-3/5 max-lg:w-4/5 mx-auto pt-5 pb-8 ${contShow == 0 ? "" : "hidden"}`}>
             <div className="box my-10">
               <h3 className="relative text-3xl font-bold text-[#4a4a4a] inline-block mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>
 
