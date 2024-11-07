@@ -40,7 +40,7 @@ const Detail = () => {
 const fetchData = async () => {
   try {
     const response = await axios.post(
-      'https://api.medicaments-dz.com/_search',
+      'https://cors-anywhere.herokuapp.com/https://api.medicaments-dz.com/_search',
       {
         query: {
           match: {

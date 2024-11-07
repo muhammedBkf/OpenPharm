@@ -19,7 +19,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://213.199.63.26:9200/api/register/", formData);
+      await axios.post("https://cors-anywhere.herokuapp.com/https://api.medicaments-dz.com/api/register/", formData);
       setError(null);
       navigate("/login"); 
     } catch (err) {

@@ -10,7 +10,7 @@ const Login = () => {
     const username = e.target.username.value;
     const password = e.target.password.value;
   
-    const response = await fetch('http://213.199.63.26:9200/api/token/', {
+    const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.medicaments-dz.com/api/token/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
