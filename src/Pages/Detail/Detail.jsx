@@ -11,9 +11,9 @@ const Detail = () => {
   const { id } = useParams();
   const [medicament, setMedicament] = useState(null);
   const [images, setImages] = useState(
-    ["https://www.pharma-gdd.com/cache/product_show/333430303933353935353833382d646f6c697072616e652d313030306d672d382d636f6d7072696d657313e8670f.jpg.webp",
-      "https://www.pharma-gdd.com/cache/product_show/73616e6f66692d646f6c697072616e652d313030306d672d382d636f6d6f7072696d65732d646f7354c5da4e.jpg.webp",
-      "https://www.pharma-gdd.com/media/cache/resolve/product_show/73616e6f66692d646f6c697072616e652d313030306d672d382d636f6d6f7072696d65732d636f7465768077f6.jpg"
+    ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzxckcFsPGuAvgYQVZ2MZKzySMiqT3axFnZQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzxckcFsPGuAvgYQVZ2MZKzySMiqT3axFnZQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzxckcFsPGuAvgYQVZ2MZKzySMiqT3axFnZQ&s"
     ]
   );
   const [image, setImage] = useState(images[0]);

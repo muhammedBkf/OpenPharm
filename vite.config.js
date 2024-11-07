@@ -12,7 +12,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/pharma': {
-        target: 'http://213.199.63.26:9200',
+        target: 'https://api.medicaments-dz.com/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/pharma/, '')
       }
