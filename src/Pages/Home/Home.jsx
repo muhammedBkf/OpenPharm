@@ -15,7 +15,7 @@ import './styles.css';
 
 const connector = new ElasticsearchAPIConnector({
   // index: "medicine-index-w-autoco mplete",
-  host: "https://api.medicaments-dz.com",
+  host: "/api/proxy",
   index: "pharma",
   connectionOptions: {
     headers: {
