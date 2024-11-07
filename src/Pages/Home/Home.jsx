@@ -16,7 +16,7 @@ import './styles.css';
 const connector = new ElasticsearchAPIConnector({
   // index: "medicine-index-w-autoco mplete",
   // host: "/pharma/_search",
-  host: "https://cors-anywhere.herokuapp.com/https://api.medicaments-dz.com",
+  host: "https://api.medicaments-dz.com",
   index: "pharma",
   connectionOptions: {
     headers: {
