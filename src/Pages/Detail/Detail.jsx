@@ -40,7 +40,7 @@ const Detail = () => {
 const fetchData = async () => {
   try {
     const response = await axios.post(
-      '/pharma/_search',
+      'https://api.medicaments-dz.com/_search',
       {
         query: {
           match: {
