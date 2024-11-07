@@ -51,13 +51,16 @@ export default function Header(props) {
                      </Link>
                 </div>
                 <div>
-                    <Link to='/login'>
-                    <Button text="Se connecter" className="bg-transparent mr-2 border border-[#00157C] text-white rounded-2xl hover:bg-[#f0f0f0] hover:text-[#00157C]" />
-                    </Link>
-                    <Link to='/signup'>
-                        <Button text="S'inscrire" className="bg-transparent text-[#f0f0f0] border border-1 border-[#f0f0f0] rounded-2xl hover:bg-[#f0f0f0] hover:text-[#00157C]" />
-                    </Link>
-                    {isPhone &&  <span onClick={shNavbar} style={{ width: window.innerWidth < 300 && '67px' }}><FontAwesomeIcon icon={faBars} style={{color: "#fff", fontSize: "22px", cursor: "pointer"}} /></span>}  
+                    { !isPhone ?
+                    <>
+                        <Link to='/login'>
+                        <Button text="Se connecter" className="bg-transparent mr-2 border border-[#00157C] text-white rounded-2xl hover:bg-[#f0f0f0] hover:text-[#00157C]" />
+                        </Link>
+                        <Link to='/signup'>
+                            <Button text="S'inscrire" className="bg-transparent text-[#f0f0f0] border border-1 border-[#f0f0f0] rounded-2xl hover:bg-[#f0f0f0] hover:text-[#00157C]" />
+                        </Link>
+                    </>
+                    :  <span onClick={shNavbar} style={{ width: window.innerWidth < 300 && '67px' }}><FontAwesomeIcon icon={faBars} style={{color: "#fff", fontSize: "22px", cursor: "pointer"}} /></span>}  
                 </div>
                 </div>
                 {isPhone &&

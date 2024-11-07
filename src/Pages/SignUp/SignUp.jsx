@@ -35,7 +35,7 @@ const SignUp = () => {
             <Link to="/">
               <img
                 src={
-                  "src/assets/conception-du-logo-du-medecin-pharmaceutique-medical-2gf7j3t-removebg-preview.png"
+                  "https://i.ibb.co/wy6PX7L/conception-du-logo-du-medecin-pharmaceutique-medical-2gf7j3t-removebg-preview.png"
                 }
                 alt="logo"
                 className="w-40 mb-8 block"
