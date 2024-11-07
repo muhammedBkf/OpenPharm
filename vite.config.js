@@ -14,7 +14,6 @@ export default defineConfig({
       '/pharma': {
         target: 'https://api.medicaments-dz.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/pharma/, '')
       }
     }
   }

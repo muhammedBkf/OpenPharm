@@ -80,7 +80,7 @@ const Home = () => (
   <SearchProvider config={config}>
     <ErrorBoundary>
       <Header />
-      <div className="break h-16"></div>
+      <div className="break h-36"></div>
       <div className="hero bg-[#edf0ff]">
         <div className="container mx-auto">
           <div className="cont1 text-center w-4/5 mx-auto pt-5 pb-16">
@@ -128,13 +128,12 @@ const Home = () => (
 
             />
 
-
           </div>
 
 
 
-          <div className="w-full grid grid-auto-columns grid-cols-12  mt-5.5">
-            <div className=" col-span-2  mr-10 ">
+          <div className="w-full grid grid-auto-columns grid-cols-12  mt-5.5 pl-10">
+            <div className=" col-span-2  mr-10">
 
               <Facet key={"2"} field={"Pays"} showSearch={true} searchPlaceholder="rechercher pays..." label={<span style={{ color: '#00A896', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >Pays</span>} />
               <Facet key={"3"} field={"labo.keyword"} searchPlaceholder="rechercher labo ..." isFilterable={true} label={<span style={{ color: '#00A896', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >Laboratoire</span>} />
