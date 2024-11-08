@@ -20,7 +20,6 @@ const connector = new ElasticsearchAPIConnector({
   index: "pharma_app",
   connectionOptions: {
     headers: {
-      Authorization: 'Basic ZWxhc3RpYzpuX1d5Z3JXVnVqUU1pZTY1emdIdw==',
     },
   }
 });
