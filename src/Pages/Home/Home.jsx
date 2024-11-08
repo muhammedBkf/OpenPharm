@@ -17,7 +17,7 @@ const connector = new ElasticsearchAPIConnector({
   // index: "medicine-index-w-autoco mplete",
   // host: "/pharma/_search",
   host: "https://api.medicaments-dz.com",
-  index: "pharma",
+  index: "pharma_app",
   connectionOptions: {
     headers: {
       Authorization: 'Basic ZWxhc3RpYzpuX1d5Z3JXVnVqUU1pZTY1emdIdw==',

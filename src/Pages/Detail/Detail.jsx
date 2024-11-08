@@ -11,14 +11,21 @@ const Detail = () => {
   const { id } = useParams();
   const [medicament, setMedicament] = useState(null);
   const [images, setImages] = useState(
-    ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzxckcFsPGuAvgYQVZ2MZKzySMiqT3axFnZQ&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzxckcFsPGuAvgYQVZ2MZKzySMiqT3axFnZQ&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzxckcFsPGuAvgYQVZ2MZKzySMiqT3axFnZQ&s"
+    ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzxckcFsPGuAvgYQVZ2MZKzySMiqT3axFnZQ&s",  
     ]
   );
   const [image, setImage] = useState(images[0]);
   const [contShow, setContShow] = useState(0);
-
+// Assuming 'medicament' has an 'image' attribute if it exists
+useEffect(() => {
+  if (medicament && medicament["image"]) {
+    console.log(medicament["image"]);
+    setImages(["https://api.medicaments-dz.com/images/" + medicament["image"]]);
+    setImage("https://api.medicaments-dz.com/images/" + medicament["image"]);  // Use the medicament image if available
+  } else {
+    setImage(images[0]);  // Fall back to the default image if medicament image is not available
+  }
+}, [medicament]);
   useEffect(() => {
     // const fetchMedicament = async () => {
     //   try {
@@ -40,7 +47,7 @@ const Detail = () => {
 const fetchData = async () => {
   try {
     const response = await axios.post(
-      'https://api.medicaments-dz.com/pharma/_search',
+      'https://api.medicaments-dz.com/pharma_app/_search',
       {
         query: {
           match: {
@@ -80,6 +87,9 @@ fetchData();
             <p className="text-lg font-thin text-[#000625] leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
               COMMERCIALISÉ
             </p>
+            <p className="text-lg font-thin text-[#000625] leading-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            Remboursable: {medicament['Remboursable']}
+            </p>
           </div>
 
 
@@ -90,7 +100,7 @@ fetchData();
           <ul className="flex justify-center gap-2 cont2 text-center w-3/5 mx-auto text-white bg-transparent -mt-9 font-poppins  text-sm">
             <li onClick={() => setContShow(0)} className="cursor-pointer bg-[#d2d9ff] py-3 px-4 flex items-center rounded-md shadow">
               <img src={labIcon} alt="Laboratory" className="w-5 h-5" />
-              {medicament['labo']}
+              {medicament['Laboratoire']}
             </li>
             <li className="cursor-pointer bg-[#d2d9ff] py-3 px-4 flex items-center rounded-md shadow ">
               <img src={mapIcon} alt="Country" className="w-5 h-5" />
@@ -113,7 +123,7 @@ fetchData();
                 </span>
               </h3>
               <div className="font-normal text-[#171A1F] overflow-x-auto">
-                <img src={image} alt="Country" className="w-96 h-96 mx-auto" />
+                <img src={image} alt="Image" className="w-96 h-96 mx-auto" />
 
                 <div className="grid grid-cols-1 md:grid-cols-3">
                 {images.map((item, key) =>
@@ -151,9 +161,8 @@ fetchData();
                     {[
                       { label: 'Classe pharmaceutique', value: medicament['cpharmaco'] },
                       { label: 'Classe thérapeutique', value: medicament['ctherapeutique'] },
-                      { label: 'DCI', value: medicament['dci'] },
-                      { label: 'Code DCI', value: medicament['Code DCI'] },
-                      { label: 'Forme', value: medicament['Forme'] },
+                      { label: 'DCI', value: medicament['Dci'] },
+                      { label: 'Forme', value: medicament['Fome'] },
                       { label: 'Dosage', value: medicament['Dosage'] },
                       { label: 'Packaging', value: medicament['Conditionnement'] },
                       { label: 'Type', value: medicament['Type'] },
@@ -164,15 +173,25 @@ fetchData();
                         <td className="px-4 py-2">{item.value || 'N/A'}</td>
                       </tr>
                     ))}
-                    <tr className="border-b border-gray-200">
-                      <td className="px-4 py-2 font-bold text-gray-700 text-center">
-                        <Link to="#" onClick={() => window.open('/', '_blank')}>
-                          <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                            Télécharger la notice
-                          </button>
-                        </Link>
-                      </td>
-                    </tr>
+{
+  medicament?.notice && (
+    <tr className="border-b border-gray-200">
+      <td className="px-4 py-2 font-bold text-gray-700 text-center">
+        <Link
+          to="#"
+          onClick={() => {
+            const fileUrl = 'https://api.medicaments-dz.com/notices/' + medicament['notice'];
+            window.open(fileUrl, '_blank'); // Open the PDF in a new tab
+          }}
+        >
+          <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+            Télécharger la notice
+          </button>
+        </Link>
+      </td>
+    </tr>
+  )
+}
                   </tbody>
                 </table>
               </div>

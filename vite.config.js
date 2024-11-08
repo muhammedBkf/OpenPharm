@@ -11,7 +11,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/pharma': {
+      '/pharma_app': {
         target: 'https://api.medicaments-dz.com',
         changeOrigin: true,
         // target: 'http://213.199.63.26:9200',
