@@ -139,7 +139,7 @@ const Home = () => (
               <Facet key={"3"} field={"labo.keyword"} searchPlaceholder="rechercher labo ..." isFilterable={true} label={<span style={{ color: '#00157C', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >Laboratoire</span>} />
               <Facet key={"4"} field={"cpharmaco"} searchPlaceholder="rechercher c.pharmaco..." isFilterable={true} label={<span style={{ color: '#00157C', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >C.pharmaceutique</span>} />
               <Facet key={"5"} field={"ctherapeutique"} searchPlaceholder="rechercher c.therapo..." isFilterable={true} label={<span style={{ color: '#00157C', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >C.therapeutique</span>} />
-              <Facet key={"1"} field={"Type"} searchPlaceholder="rechercher type..." label={<span style={{ color: '#00A896', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >Type</span>} isFilterable={true} />
+              <Facet key={"1"} field={"Type"} searchPlaceholder="rechercher type..." label={<span style={{ color: '#00157C', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >Type</span>} isFilterable={true} />
 
             </div>
 
