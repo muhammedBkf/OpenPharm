@@ -135,10 +135,10 @@ const Home = () => (
           <div className="w-full grid grid-auto-columns grid-cols-12  mt-5.5 pl-10">
             <div className=" col-span-2 max-lg:col-span-12 mr-10">
 
-              <Facet key={"2"} field={"Pays"} showSearch={true} searchPlaceholder="rechercher pays..." label={<span style={{ color: '#00A896', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >Pays</span>} />
-              <Facet key={"3"} field={"labo.keyword"} searchPlaceholder="rechercher labo ..." isFilterable={true} label={<span style={{ color: '#00A896', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >Laboratoire</span>} />
-              <Facet key={"4"} field={"cpharmaco"} searchPlaceholder="rechercher c.pharmaco..." isFilterable={true} label={<span style={{ color: '#00A896', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >C.pharmaceutique</span>} />
-              <Facet key={"5"} field={"ctherapeutique"} searchPlaceholder="rechercher c.therapo..." isFilterable={true} label={<span style={{ color: '#00A896', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >C.therapeutique</span>} />
+              <Facet key={"2"} field={"Pays"} showSearch={true} searchPlaceholder="rechercher pays..." label={<span style={{ color: '#00157C', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >Pays</span>} />
+              <Facet key={"3"} field={"labo.keyword"} searchPlaceholder="rechercher labo ..." isFilterable={true} label={<span style={{ color: '#00157C', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >Laboratoire</span>} />
+              <Facet key={"4"} field={"cpharmaco"} searchPlaceholder="rechercher c.pharmaco..." isFilterable={true} label={<span style={{ color: '#00157C', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >C.pharmaceutique</span>} />
+              <Facet key={"5"} field={"ctherapeutique"} searchPlaceholder="rechercher c.therapo..." isFilterable={true} label={<span style={{ color: '#00157C', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >C.therapeutique</span>} />
               <Facet key={"1"} field={"Type"} searchPlaceholder="rechercher type..." label={<span style={{ color: '#00A896', fontFamily: 'Poppins, sans-serif', fontSize: '12px' }} >Type</span>} isFilterable={true} />
 
             </div>
