@@ -50,7 +50,7 @@ export default function Header(props) {
                      <h1 className="text-2xl font-bold text-white" style={{ fontFamily: 'Poppins, sans-serif' }} >OpenPharm</h1>
                      </Link>
                 </div>
-                <div>
+                <div className="hidden">
                     { !isPhone ?
                     <>
                         <Link to='/login'>
